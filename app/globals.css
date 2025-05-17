@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 173 80% 40%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 173 80% 40%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 173 80% 40%;
+  }
+}
+
+@layer components {
+  .heroButton {
+    @apply px-4 py-2 md:px-6 md:py-2 border border-gray-300 dark:border-gray-700 rounded-full uppercase text-xs tracking-widest text-gray-500 dark:text-gray-400 transition-all hover:border-teal-600/40 hover:text-teal-600/40 dark:hover:border-teal-400/40 dark:hover:text-teal-400/40 active:scale-95;
+  }
+
+  .contactInput {
+    @apply outline-none bg-gray-100/30 dark:bg-gray-800/30 rounded-sm border-b px-4 py-3 md:px-6 md:py-4 border-gray-300 dark:border-gray-700 text-gray-600 dark:text-gray-300 placeholder-gray-500 dark:placeholder-gray-500 transition-all focus:border-teal-600/40 dark:focus:border-teal-400/40 focus:text-teal-600 dark:focus:text-teal-400 hover:border-teal-600/40 dark:hover:border-teal-400/40 text-sm md:text-base;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.scrollbar-track-gray-400\/20::-webkit-scrollbar-track {
+  background-color: rgb(156 163 175 / 0.2);
+}
+
+.scrollbar-thumb-teal-600\/80::-webkit-scrollbar-thumb {
+  background-color: rgb(13 148 136 / 0.8);
+  border-radius: 9999px;
+}
+
+.scrollbar-thumb-teal-600\/80::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(13 148 136 / 1);
+}
+
+.scrollbar-track-gray-200::-webkit-scrollbar-track {
+  background-color: rgb(229 231 235);
+}
+
+@media (max-width: 640px) {
+  .snap-mandatory {
+    scroll-snap-type: y proximity;
+  }
+}
+
+/* Add these typewriter animation keyframes at the end of the file */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: hsl(var(--primary));
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 0.15em solid hsl(var(--primary));
+  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
